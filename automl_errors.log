@@ -1,0 +1,1088 @@
+2019-02-17 08:46:40,748 - INFO - 157 : Starting usage telemetry collection
+2019-02-17 08:46:42,602 - INFO - 390 : Extracting user Data
+2019-02-17 08:46:43,036 - INFO - 423 : Start creating parent run with DTO:  - name: automl-predictive-rul
+ - subscription_id: 381b38e9-9840-4719-a5a0-61d9585e1e91
+ - iterations: 3
+ - primary_metric: r2_score
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 3
+ - y_min: 0
+ - y_max: 361
+ - num_classes: None
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 2
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 10
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: 0.985
+ - whitelist_models: None
+ - blacklist_algos: ['ExtremeRandomTrees', 'ExtraTreesRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 3
+ - enable_tf: True
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize.
+2019-02-17 08:46:47,884 - INFO - 529 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03]SDK dependencies versions:{"azureml-widgets": "1.0.10", "azureml-train": "1.0.10", "azureml-train-restclients-hyperdrive": "1.0.10", "azureml-train-core": "1.0.10", "azureml-train-automl": "1.0.10", "azureml-telemetry": "1.0.10", "azureml-sdk": "1.0.10", "azureml-pipeline": "1.0.10", "azureml-pipeline-steps": "1.0.10.1", "azureml-pipeline-core": "1.0.10", "azureml-explain-model": "1.0.10", "azureml-dataprep": "1.0.8", "azureml-dataprep-native": "11.2.1", "azureml-core": "1.0.10"}.
+2019-02-17 08:46:48,895 - INFO - 447 : [ParentRunID:AutoML_59a47873-dc59-4356-af5b-3520f6534a03] Local run using input X and y.
+2019-02-17 08:46:48,939 - INFO - 450 : Parent Run ID: AutoML_59a47873-dc59-4356-af5b-3520f6534a03
+2019-02-17 08:46:49,141 - INFO - 925 : [ParentRunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03]Input X datatype is <class 'numpy.ndarray'>, shape is (20631, 24), datasize is 112.
+2019-02-17 08:46:49,332 - INFO - 925 : [ParentRunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03]Input y datatype is <class 'numpy.ndarray'>, shape is (20631,), datasize is 165144.
+2019-02-17 08:46:49,554 - INFO - 40 : Pre-processing user data
+2019-02-17 08:46:50,816 - INFO - 64 : memory usage 265524
+2019-02-17 08:46:50,928 - INFO - 64 : child memory usage 242040
+2019-02-17 08:46:50,977 - INFO - 662 : [YCol]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "362", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "3", "column_type": "\"integer\"", "average_entry_length": "2.466821773059958", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.017546410741117735"}
+2019-02-17 08:46:51,097 - INFO - 73 : cpu time 378.561497
+2019-02-17 08:46:51,717 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:46:53,157 - INFO - 662 : [XColNum:0]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "158", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "5", "column_type": "\"floating\"", "average_entry_length": "6.357520236537249", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.0076583781687751444"}
+2019-02-17 08:46:54,804 - INFO - 662 : [XColNum:1]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "13", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "4", "column_type": "\"floating\"", "average_entry_length": "6.19853618341331", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.000630119722747322"}
+2019-02-17 08:46:56,231 - INFO - 662 : [XColNum:2]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "1", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"floating\"", "average_entry_length": "5.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "4.847074790364015e-05"}
+2019-02-17 08:46:57,901 - INFO - 662 : [XColNum:3]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "1", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"floating\"", "average_entry_length": "6.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "4.847074790364015e-05"}
+2019-02-17 08:46:59,635 - INFO - 662 : [XColNum:4]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "310", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "5.896660365469439", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.015025931850128448"}
+2019-02-17 08:47:01,537 - INFO - 662 : [XColNum:5]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "3012", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "6.902719208957394", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.14599389268576415"}
+2019-02-17 08:47:02,274 - INFO - 64 : memory usage 265536
+2019-02-17 08:47:02,380 - INFO - 64 : child memory usage 242040
+2019-02-17 08:47:02,706 - INFO - 73 : cpu time 388.990481
+2019-02-17 08:47:02,910 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:47:03,891 - INFO - 662 : [XColNum:6]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "4051", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "6.902573796713683", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.19635499975764625"}
+2019-02-17 08:47:05,675 - INFO - 662 : [XColNum:7]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "1", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"floating\"", "average_entry_length": "5.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "4.847074790364015e-05"}
+2019-02-17 08:47:07,260 - INFO - 662 : [XColNum:8]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "2", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "4.980320876351122", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "9.69414958072803e-05"}
+2019-02-17 08:47:09,030 - INFO - 662 : [XColNum:9]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "513", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "5.895497067519752", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.024865493674567397"}
+2019-02-17 08:47:10,834 - INFO - 662 : [XColNum:10]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "53", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "6.899520139595754", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.002568949638892928"}
+2019-02-17 08:47:12,785 - INFO - 662 : [XColNum:11]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "6403", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "6.899568610343658", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.3103581988270079"}
+2019-02-17 08:47:13,289 - INFO - 64 : memory usage 267556
+2019-02-17 08:47:13,509 - INFO - 64 : child memory usage 242040
+2019-02-17 08:47:13,741 - INFO - 73 : cpu time 399.193884
+2019-02-17 08:47:14,020 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:47:14,473 - INFO - 662 : [XColNum:12]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "1", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"floating\"", "average_entry_length": "3.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "4.847074790364015e-05"}
+2019-02-17 08:47:16,115 - INFO - 662 : [XColNum:13]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "159", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "4.901846735495129", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.007706848916678785"}
+2019-02-17 08:47:17,979 - INFO - 662 : [XColNum:14]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "427", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "5.900344142310116", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.020697009354854346"}
+2019-02-17 08:47:19,843 - INFO - 662 : [XColNum:15]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "56", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "6.897629780427512", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.0027143618826038487"}
+2019-02-17 08:47:21,761 - INFO - 662 : [XColNum:16]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "6078", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "6.898841549125103", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.29460520575832483"}
+2019-02-17 08:47:23,540 - INFO - 662 : [XColNum:17]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "1918", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "4", "column_type": "\"floating\"", "average_entry_length": "5.887305511124037", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.09296689447918181"}
+2019-02-17 08:47:24,258 - INFO - 64 : memory usage 267680
+2019-02-17 08:47:24,367 - INFO - 64 : child memory usage 242040
+2019-02-17 08:47:24,598 - INFO - 73 : cpu time 409.202126
+2019-02-17 08:47:24,995 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:47:25,279 - INFO - 662 : [XColNum:18]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "1", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"floating\"", "average_entry_length": "4.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "4.847074790364015e-05"}
+2019-02-17 08:47:26,733 - INFO - 662 : [XColNum:19]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "13", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"floating\"", "average_entry_length": "5.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.000630119722747322"}
+2019-02-17 08:47:28,282 - INFO - 662 : [XColNum:20]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "1", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"floating\"", "average_entry_length": "6.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "4.847074790364015e-05"}
+2019-02-17 08:47:29,763 - INFO - 662 : [XColNum:21]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "1", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"floating\"", "average_entry_length": "5.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "4.847074790364015e-05"}
+2019-02-17 08:47:31,455 - INFO - 662 : [XColNum:22]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "120", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"floating\"", "average_entry_length": "4.899568610343658", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.005816489748436819"}
+2019-02-17 08:47:33,426 - INFO - 662 : [XColNum:23]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "4745", "total_number_vals": "20631", "lengths": "{}", "num_unique_lens": "4", "column_type": "\"floating\"", "average_entry_length": "6.887838689350977", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.22999369880277254"}
+2019-02-17 08:47:33,610 - INFO - 109 : No preprocessing of data to be done here
+2019-02-17 08:47:33,800 - INFO - 362 : Creating cross validations
+2019-02-17 08:47:33,996 - INFO - 376 : Found cross validation type: KFoldCrossValidationSplit
+2019-02-17 08:47:34,220 - INFO - 468 : Completed creating cross-validation folds and featurizing them
+2019-02-17 08:47:35,159 - INFO - 64 : memory usage 267680
+2019-02-17 08:47:35,305 - INFO - 64 : child memory usage 242040
+2019-02-17 08:47:35,561 - INFO - 73 : cpu time 418.380435
+2019-02-17 08:47:35,775 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:47:37,642 - INFO - 558 : Start local loop.
+2019-02-17 08:47:37,712 - INFO - 561 : Start iteration: 0
+2019-02-17 08:47:37,916 - INFO - 818 : Querying Jasmine for next pipeline.
+2019-02-17 08:47:39,685 - INFO - 604 : Received pipeline: {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": true}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "GradientBoostingRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"criterion": "friedman_mse", "learning_rate": 0.004641588833612777, "loss": "huber", "max_depth": 5, "max_features": 0.5, "min_samples_leaf": 0.03438518777954402, "min_samples_split": 0.002602463309528381, "n_estimators": 600, "subsample": 0.65}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "2da32926b8173cbb8d8bb275c13d21fa293f994c"}
+2019-02-17 08:47:41,912 - INFO - 50 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0]CPU logical cores: 2, CPU cores: 2, virtual memory: 4107841536, swap memory: 0.
+2019-02-17 08:47:41,974 - INFO - 56 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0]Platform information: Linux-4.14.29-linuxkit-x86_64-with-debian-stretch-sid.
+2019-02-17 08:47:42,213 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Starting fit_pipeline]memory usage 267680
+2019-02-17 08:47:42,421 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Starting fit_pipeline]child memory usage 242040
+2019-02-17 08:47:42,662 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Starting fit_pipeline]cpu time 421.210256
+2019-02-17 08:47:43,015 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Starting fit_pipeline]child cpu time 1758.334635
+2019-02-17 08:47:43,474 - INFO - 325 : [ParentRunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0] X datatype is <class 'numpy.ndarray'>, shape is (20631, 24), datasize is 112.
+2019-02-17 08:47:43,564 - INFO - 330 : [ParentRunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0] y datatype is <class 'numpy.ndarray'>, shape is (20631,), datasize is 165144.
+2019-02-17 08:47:43,993 - INFO - 346 : Using child run AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0
+2019-02-17 08:47:44,236 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Before preprocess]memory usage 267680
+2019-02-17 08:47:44,617 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Before preprocess]child memory usage 242040
+2019-02-17 08:47:44,931 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Before preprocess]cpu time 421.919075
+2019-02-17 08:47:45,180 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Before preprocess]child cpu time 1758.334635
+2019-02-17 08:47:45,403 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][After preprocess]memory usage 267680
+2019-02-17 08:47:45,685 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][After preprocess]child memory usage 242040
+2019-02-17 08:47:45,897 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][After preprocess]cpu time 422.245845
+2019-02-17 08:47:46,032 - INFO - 64 : memory usage 267680
+2019-02-17 08:47:46,105 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][After preprocess]child cpu time 1758.334635
+2019-02-17 08:47:46,617 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Before executing pipeline]memory usage 267680
+2019-02-17 08:47:46,390 - INFO - 64 : child memory usage 242040
+2019-02-17 08:47:47,023 - INFO - 73 : cpu time 422.435567
+2019-02-17 08:47:46,815 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Before executing pipeline]child memory usage 242040
+2019-02-17 08:47:47,278 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:47:47,495 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Before executing pipeline]cpu time 422.584611
+2019-02-17 08:47:48,016 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][Before executing pipeline]child cpu time 1758.334635
+2019-02-17 08:47:48,325 - INFO - 417 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": true}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "GradientBoostingRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"criterion": "friedman_mse", "learning_rate": 0.004641588833612777, "loss": "huber", "max_depth": 5, "max_features": 0.5, "min_samples_leaf": 0.03438518777954402, "min_samples_split": 0.002602463309528381, "n_estimators": 600, "subsample": 0.65}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "2da32926b8173cbb8d8bb275c13d21fa293f994c"}.
+2019-02-17 08:47:48,521 - INFO - 419 : Running with the following AutoML settings:
+ - name: automl-predictive-rul
+ - subscription_id: 381b38e9-9840-4719-a5a0-61d9585e1e91
+ - iterations: 3
+ - primary_metric: r2_score
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 3
+ - y_min: 0
+ - y_max: 361
+ - num_classes: None
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 2
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 10
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: 0.985
+ - whitelist_models: None
+ - blacklist_algos: ['ExtremeRandomTrees', 'ExtraTreesRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 3
+ - enable_tf: True
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-02-17 08:47:57,784 - INFO - 64 : memory usage 267680
+2019-02-17 08:47:57,941 - INFO - 64 : child memory usage 242040
+2019-02-17 08:47:58,142 - INFO - 73 : cpu time 424.27307
+2019-02-17 08:47:58,374 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:48:08,903 - INFO - 64 : memory usage 267680
+2019-02-17 08:48:08,999 - INFO - 64 : child memory usage 242040
+2019-02-17 08:48:09,325 - INFO - 73 : cpu time 424.876345
+2019-02-17 08:48:09,624 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:48:19,848 - INFO - 64 : memory usage 267680
+2019-02-17 08:48:19,908 - INFO - 64 : child memory usage 242040
+2019-02-17 08:48:20,122 - INFO - 73 : cpu time 425.390534
+2019-02-17 08:48:20,581 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:48:30,730 - INFO - 64 : memory usage 267680
+2019-02-17 08:48:30,805 - INFO - 64 : child memory usage 242040
+2019-02-17 08:48:31,056 - INFO - 73 : cpu time 425.894825
+2019-02-17 08:48:31,256 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:48:41,576 - INFO - 64 : memory usage 267680
+2019-02-17 08:48:41,681 - INFO - 64 : child memory usage 242040
+2019-02-17 08:48:41,962 - INFO - 73 : cpu time 426.391293
+2019-02-17 08:48:42,303 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:48:52,520 - INFO - 64 : memory usage 267680
+2019-02-17 08:48:52,618 - INFO - 64 : child memory usage 242040
+2019-02-17 08:48:52,953 - INFO - 73 : cpu time 426.81301
+2019-02-17 08:48:53,177 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:49:03,470 - INFO - 64 : memory usage 267680
+2019-02-17 08:49:03,571 - INFO - 64 : child memory usage 242040
+2019-02-17 08:49:03,862 - INFO - 73 : cpu time 427.438925
+2019-02-17 08:49:04,056 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:49:14,350 - INFO - 64 : memory usage 267680
+2019-02-17 08:49:14,464 - INFO - 64 : child memory usage 242040
+2019-02-17 08:49:14,765 - INFO - 73 : cpu time 427.891925
+2019-02-17 08:49:14,927 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:49:25,225 - INFO - 64 : memory usage 267680
+2019-02-17 08:49:25,353 - INFO - 64 : child memory usage 242040
+2019-02-17 08:49:25,722 - INFO - 73 : cpu time 428.461506
+2019-02-17 08:49:25,974 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:49:36,348 - INFO - 64 : memory usage 267680
+2019-02-17 08:49:36,460 - INFO - 64 : child memory usage 242040
+2019-02-17 08:49:36,746 - INFO - 73 : cpu time 429.027444
+2019-02-17 08:49:36,939 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:49:47,391 - INFO - 64 : memory usage 267680
+2019-02-17 08:49:47,503 - INFO - 64 : child memory usage 242040
+2019-02-17 08:49:47,791 - INFO - 73 : cpu time 429.529862
+2019-02-17 08:49:48,018 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:49:58,304 - INFO - 64 : memory usage 267680
+2019-02-17 08:49:58,424 - INFO - 64 : child memory usage 242040
+2019-02-17 08:49:58,720 - INFO - 73 : cpu time 430.045432
+2019-02-17 08:49:59,037 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:50:09,298 - INFO - 64 : memory usage 267680
+2019-02-17 08:50:09,420 - INFO - 64 : child memory usage 242040
+2019-02-17 08:50:09,691 - INFO - 73 : cpu time 430.572084
+2019-02-17 08:50:09,907 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:50:20,153 - INFO - 64 : memory usage 267680
+2019-02-17 08:50:20,245 - INFO - 64 : child memory usage 242040
+2019-02-17 08:50:20,483 - INFO - 73 : cpu time 431.068257
+2019-02-17 08:50:20,651 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:50:31,010 - INFO - 64 : memory usage 268600
+2019-02-17 08:50:31,113 - INFO - 64 : child memory usage 242040
+2019-02-17 08:50:31,375 - INFO - 73 : cpu time 431.496166
+2019-02-17 08:50:31,598 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:50:41,920 - INFO - 64 : memory usage 268600
+2019-02-17 08:50:42,049 - INFO - 64 : child memory usage 242040
+2019-02-17 08:50:42,289 - INFO - 73 : cpu time 432.021373
+2019-02-17 08:50:42,541 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:50:52,935 - INFO - 64 : memory usage 268600
+2019-02-17 08:50:53,108 - INFO - 64 : child memory usage 242040
+2019-02-17 08:50:53,391 - INFO - 73 : cpu time 432.512669
+2019-02-17 08:50:53,651 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:51:03,961 - INFO - 64 : memory usage 268600
+2019-02-17 08:51:04,067 - INFO - 64 : child memory usage 242040
+2019-02-17 08:51:04,284 - INFO - 73 : cpu time 432.951713
+2019-02-17 08:51:04,767 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:51:15,103 - INFO - 64 : memory usage 268600
+2019-02-17 08:51:15,226 - INFO - 64 : child memory usage 242040
+2019-02-17 08:51:15,573 - INFO - 73 : cpu time 433.553479
+2019-02-17 08:51:15,837 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:51:26,121 - INFO - 64 : memory usage 268600
+2019-02-17 08:51:26,252 - INFO - 64 : child memory usage 242040
+2019-02-17 08:51:26,569 - INFO - 73 : cpu time 434.09037
+2019-02-17 08:51:26,884 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:51:37,240 - INFO - 64 : memory usage 268600
+2019-02-17 08:51:37,371 - INFO - 64 : child memory usage 242040
+2019-02-17 08:51:37,694 - INFO - 73 : cpu time 434.610141
+2019-02-17 08:51:37,943 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:51:48,280 - INFO - 64 : memory usage 268600
+2019-02-17 08:51:48,403 - INFO - 64 : child memory usage 242040
+2019-02-17 08:51:48,664 - INFO - 73 : cpu time 435.168287
+2019-02-17 08:51:48,922 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:51:59,173 - INFO - 64 : memory usage 268600
+2019-02-17 08:51:59,296 - INFO - 64 : child memory usage 242040
+2019-02-17 08:51:59,554 - INFO - 73 : cpu time 435.68661
+2019-02-17 08:51:59,780 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:52:10,120 - INFO - 64 : memory usage 268600
+2019-02-17 08:52:10,239 - INFO - 64 : child memory usage 242040
+2019-02-17 08:52:10,543 - INFO - 73 : cpu time 436.199022
+2019-02-17 08:52:10,952 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:52:21,131 - INFO - 64 : memory usage 268600
+2019-02-17 08:52:21,243 - INFO - 64 : child memory usage 242040
+2019-02-17 08:52:21,547 - INFO - 73 : cpu time 436.733303
+2019-02-17 08:52:21,788 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:52:32,205 - INFO - 64 : memory usage 268600
+2019-02-17 08:52:32,327 - INFO - 64 : child memory usage 242040
+2019-02-17 08:52:32,648 - INFO - 73 : cpu time 437.241062
+2019-02-17 08:52:32,842 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:52:43,211 - INFO - 64 : memory usage 268600
+2019-02-17 08:52:43,338 - INFO - 64 : child memory usage 242040
+2019-02-17 08:52:43,653 - INFO - 73 : cpu time 437.78675
+2019-02-17 08:52:43,890 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:52:54,131 - INFO - 64 : memory usage 268600
+2019-02-17 08:52:54,235 - INFO - 64 : child memory usage 242040
+2019-02-17 08:52:54,511 - INFO - 73 : cpu time 438.139098
+2019-02-17 08:52:54,918 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:53:05,148 - INFO - 64 : memory usage 268600
+2019-02-17 08:53:05,273 - INFO - 64 : child memory usage 242040
+2019-02-17 08:53:05,547 - INFO - 73 : cpu time 438.703678
+2019-02-17 08:53:05,773 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:53:16,045 - INFO - 64 : memory usage 268600
+2019-02-17 08:53:16,170 - INFO - 64 : child memory usage 242040
+2019-02-17 08:53:16,455 - INFO - 73 : cpu time 439.20199
+2019-02-17 08:53:16,694 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:53:27,029 - INFO - 64 : memory usage 268600
+2019-02-17 08:53:27,131 - INFO - 64 : child memory usage 242040
+2019-02-17 08:53:27,437 - INFO - 73 : cpu time 439.714711
+2019-02-17 08:53:27,654 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:53:38,022 - INFO - 64 : memory usage 268600
+2019-02-17 08:53:38,145 - INFO - 64 : child memory usage 242040
+2019-02-17 08:53:38,471 - INFO - 73 : cpu time 440.247075
+2019-02-17 08:53:38,709 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:53:49,099 - INFO - 64 : memory usage 268600
+2019-02-17 08:53:49,267 - INFO - 64 : child memory usage 242040
+2019-02-17 08:53:49,614 - INFO - 73 : cpu time 440.842826
+2019-02-17 08:53:49,914 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:54:00,299 - INFO - 64 : memory usage 268600
+2019-02-17 08:54:00,416 - INFO - 64 : child memory usage 242040
+2019-02-17 08:54:00,712 - INFO - 73 : cpu time 441.450366
+2019-02-17 08:54:01,021 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:54:11,267 - INFO - 64 : memory usage 268600
+2019-02-17 08:54:11,390 - INFO - 64 : child memory usage 242040
+2019-02-17 08:54:11,854 - INFO - 73 : cpu time 441.995622
+2019-02-17 08:54:12,184 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:54:22,450 - INFO - 64 : memory usage 268600
+2019-02-17 08:54:22,570 - INFO - 64 : child memory usage 242040
+2019-02-17 08:54:22,844 - INFO - 73 : cpu time 442.453181
+2019-02-17 08:54:23,079 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:54:33,320 - INFO - 64 : memory usage 268600
+2019-02-17 08:54:33,449 - INFO - 64 : child memory usage 242040
+2019-02-17 08:54:33,733 - INFO - 73 : cpu time 442.825768
+2019-02-17 08:54:34,041 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:54:44,278 - INFO - 64 : memory usage 268600
+2019-02-17 08:54:44,407 - INFO - 64 : child memory usage 242040
+2019-02-17 08:54:44,713 - INFO - 73 : cpu time 443.405752
+2019-02-17 08:54:44,965 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:54:55,294 - INFO - 64 : memory usage 268600
+2019-02-17 08:54:55,407 - INFO - 64 : child memory usage 242040
+2019-02-17 08:54:55,762 - INFO - 73 : cpu time 443.80864
+2019-02-17 08:54:55,984 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:55:06,371 - INFO - 64 : memory usage 268600
+2019-02-17 08:55:06,544 - INFO - 64 : child memory usage 242040
+2019-02-17 08:55:06,930 - INFO - 73 : cpu time 444.345049
+2019-02-17 08:55:07,137 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:55:17,443 - INFO - 64 : memory usage 268600
+2019-02-17 08:55:17,570 - INFO - 64 : child memory usage 242040
+2019-02-17 08:55:17,852 - INFO - 73 : cpu time 444.879366
+2019-02-17 08:55:18,096 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:55:28,513 - INFO - 64 : memory usage 268600
+2019-02-17 08:55:28,626 - INFO - 64 : child memory usage 242040
+2019-02-17 08:55:29,032 - INFO - 73 : cpu time 445.39275
+2019-02-17 08:55:29,383 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:55:39,681 - INFO - 64 : memory usage 268600
+2019-02-17 08:55:39,805 - INFO - 64 : child memory usage 242040
+2019-02-17 08:55:40,143 - INFO - 73 : cpu time 445.867793
+2019-02-17 08:55:40,364 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:55:50,665 - INFO - 64 : memory usage 268600
+2019-02-17 08:55:50,806 - INFO - 64 : child memory usage 242040
+2019-02-17 08:55:51,111 - INFO - 73 : cpu time 446.317967
+2019-02-17 08:55:51,518 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:56:01,915 - INFO - 64 : memory usage 268600
+2019-02-17 08:56:02,038 - INFO - 64 : child memory usage 242040
+2019-02-17 08:56:02,319 - INFO - 73 : cpu time 446.862488
+2019-02-17 08:56:02,536 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:56:12,753 - INFO - 64 : memory usage 268600
+2019-02-17 08:56:12,885 - INFO - 64 : child memory usage 242040
+2019-02-17 08:56:13,183 - INFO - 73 : cpu time 447.263991
+2019-02-17 08:56:13,425 - INFO - 73 : child cpu time 1758.334635
+2019-02-17 08:56:23,780 - INFO - 64 : memory usage 271664
+2019-02-17 08:56:23,970 - INFO - 64 : child memory usage 264912
+2019-02-17 08:56:24,318 - INFO - 73 : cpu time 453.21699
+2019-02-17 08:56:24,693 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:56:35,078 - INFO - 64 : memory usage 271688
+2019-02-17 08:56:35,155 - INFO - 64 : child memory usage 264912
+2019-02-17 08:56:35,432 - INFO - 73 : cpu time 453.832234
+2019-02-17 08:56:35,660 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:56:45,958 - INFO - 64 : memory usage 271688
+2019-02-17 08:56:46,038 - INFO - 64 : child memory usage 264912
+2019-02-17 08:56:46,224 - INFO - 73 : cpu time 454.281827
+2019-02-17 08:56:46,436 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:56:56,745 - INFO - 64 : memory usage 271688
+2019-02-17 08:56:56,831 - INFO - 64 : child memory usage 264912
+2019-02-17 08:56:57,109 - INFO - 73 : cpu time 454.848518
+2019-02-17 08:56:57,334 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:57:07,536 - INFO - 64 : memory usage 271688
+2019-02-17 08:57:07,668 - INFO - 64 : child memory usage 264912
+2019-02-17 08:57:07,969 - INFO - 73 : cpu time 455.250883
+2019-02-17 08:57:08,283 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:57:18,693 - INFO - 64 : memory usage 271716
+2019-02-17 08:57:18,818 - INFO - 64 : child memory usage 264912
+2019-02-17 08:57:19,138 - INFO - 73 : cpu time 455.852719
+2019-02-17 08:57:19,361 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:57:29,712 - INFO - 64 : memory usage 271716
+2019-02-17 08:57:29,797 - INFO - 64 : child memory usage 264912
+2019-02-17 08:57:30,205 - INFO - 73 : cpu time 456.285937
+2019-02-17 08:57:30,432 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:57:40,704 - INFO - 64 : memory usage 271716
+2019-02-17 08:57:40,827 - INFO - 64 : child memory usage 264912
+2019-02-17 08:57:41,055 - INFO - 73 : cpu time 456.751238
+2019-02-17 08:57:41,308 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:57:51,645 - INFO - 64 : memory usage 273736
+2019-02-17 08:57:51,769 - INFO - 64 : child memory usage 264912
+2019-02-17 08:57:52,061 - INFO - 73 : cpu time 457.344358
+2019-02-17 08:57:52,287 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:58:02,565 - INFO - 64 : memory usage 273736
+2019-02-17 08:58:02,675 - INFO - 64 : child memory usage 264912
+2019-02-17 08:58:02,998 - INFO - 73 : cpu time 457.890021
+2019-02-17 08:58:03,260 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:58:13,606 - INFO - 64 : memory usage 273736
+2019-02-17 08:58:13,717 - INFO - 64 : child memory usage 264912
+2019-02-17 08:58:14,031 - INFO - 73 : cpu time 458.392871
+2019-02-17 08:58:14,253 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:58:24,491 - INFO - 64 : memory usage 273736
+2019-02-17 08:58:24,640 - INFO - 64 : child memory usage 264912
+2019-02-17 08:58:24,906 - INFO - 73 : cpu time 458.902852
+2019-02-17 08:58:25,207 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:58:35,422 - INFO - 64 : memory usage 273736
+2019-02-17 08:58:35,581 - INFO - 64 : child memory usage 264912
+2019-02-17 08:58:35,866 - INFO - 73 : cpu time 459.422574
+2019-02-17 08:58:36,108 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:58:46,518 - INFO - 64 : memory usage 273736
+2019-02-17 08:58:46,660 - INFO - 64 : child memory usage 264912
+2019-02-17 08:58:46,947 - INFO - 73 : cpu time 460.00996
+2019-02-17 08:58:47,266 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:58:57,532 - INFO - 64 : memory usage 273736
+2019-02-17 08:58:57,667 - INFO - 64 : child memory usage 264912
+2019-02-17 08:58:57,948 - INFO - 73 : cpu time 460.482807
+2019-02-17 08:58:58,309 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:59:08,527 - INFO - 64 : memory usage 273736
+2019-02-17 08:59:08,622 - INFO - 64 : child memory usage 264912
+2019-02-17 08:59:08,965 - INFO - 73 : cpu time 461.014564
+2019-02-17 08:59:09,203 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:59:19,563 - INFO - 64 : memory usage 273736
+2019-02-17 08:59:19,696 - INFO - 64 : child memory usage 264912
+2019-02-17 08:59:20,193 - INFO - 73 : cpu time 461.525903
+2019-02-17 08:59:20,478 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:59:30,807 - INFO - 64 : memory usage 273736
+2019-02-17 08:59:30,915 - INFO - 64 : child memory usage 264912
+2019-02-17 08:59:31,220 - INFO - 73 : cpu time 462.255046
+2019-02-17 08:59:31,518 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:59:41,762 - INFO - 64 : memory usage 273736
+2019-02-17 08:59:41,884 - INFO - 64 : child memory usage 264912
+2019-02-17 08:59:42,215 - INFO - 73 : cpu time 462.735097
+2019-02-17 08:59:42,537 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 08:59:52,858 - INFO - 64 : memory usage 273736
+2019-02-17 08:59:52,935 - INFO - 64 : child memory usage 264912
+2019-02-17 08:59:53,232 - INFO - 73 : cpu time 463.059678
+2019-02-17 08:59:53,587 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 09:00:04,084 - INFO - 64 : memory usage 273736
+2019-02-17 09:00:04,241 - INFO - 64 : child memory usage 264912
+2019-02-17 09:00:04,496 - INFO - 73 : cpu time 463.523331
+2019-02-17 09:00:04,934 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 09:00:15,240 - INFO - 64 : memory usage 273736
+2019-02-17 09:00:15,355 - INFO - 64 : child memory usage 264912
+2019-02-17 09:00:15,626 - INFO - 73 : cpu time 464.065929
+2019-02-17 09:00:15,911 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 09:00:26,102 - INFO - 64 : memory usage 273736
+2019-02-17 09:00:26,251 - INFO - 64 : child memory usage 264912
+2019-02-17 09:00:26,560 - INFO - 73 : cpu time 464.526391
+2019-02-17 09:00:26,968 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 09:00:37,470 - INFO - 64 : memory usage 273736
+2019-02-17 09:00:37,587 - INFO - 64 : child memory usage 264912
+2019-02-17 09:00:37,915 - INFO - 73 : cpu time 465.208414
+2019-02-17 09:00:38,182 - INFO - 73 : child cpu time 2237.731136
+2019-02-17 09:00:39,805 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][After executing pipeline]memory usage 273736
+2019-02-17 09:00:39,863 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][After executing pipeline]child memory usage 272192
+2019-02-17 09:00:40,101 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][After executing pipeline]cpu time 466.079843
+2019-02-17 09:00:40,371 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][After executing pipeline]child cpu time 2479.494225
+2019-02-17 09:00:40,583 - INFO - 446 : Pipeline execution finished with a score of 0.6237425335865256
+2019-02-17 09:00:40,842 - INFO - 473 : Start logging metrics for child run.
+2019-02-17 09:00:45,106 - WARNING - 655 : Did not recognize metric: train time. Will not log.
+2019-02-17 09:00:45,272 - INFO - 637 : The following metrics have been logged for the child run: {'r2_score': 0.6237425335865256, 'mean_absolute_error': 30.203430057136078, 'explained_variance': 0.6255461774339134, 'root_mean_squared_log_error': 0.4699000461784895, 'predicted_true': <class 'dict'>, 'normalized_root_mean_squared_log_error': 0.07975703034397447, 'normalized_root_mean_squared_error': 0.11702590920051542, 'residuals': <class 'dict'>, 'normalized_mean_absolute_error': 0.08366601123860408, 'spearman_correlation': 0.8205179254286357, 'median_absolute_error': 20.98409847836457, 'normalized_median_absolute_error': 0.05812769661596833, 'root_mean_squared_error': 42.246353221386066, 'train time': <class 'float'>}.
+2019-02-17 09:00:48,395 - INFO - 64 : memory usage 273736
+2019-02-17 09:00:48,473 - INFO - 64 : child memory usage 272192
+2019-02-17 09:00:48,693 - INFO - 73 : cpu time 471.605438
+2019-02-17 09:00:48,950 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:00:59,221 - INFO - 64 : memory usage 273736
+2019-02-17 09:00:59,327 - INFO - 64 : child memory usage 272192
+2019-02-17 09:00:59,596 - INFO - 73 : cpu time 473.736329
+2019-02-17 09:00:59,806 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:01:05,461 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][End fit_pipeline]memory usage 273736
+2019-02-17 09:01:05,563 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][End fit_pipeline]child memory usage 272192
+2019-02-17 09:01:05,722 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][End fit_pipeline]cpu time 475.432151
+2019-02-17 09:01:06,054 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_0][End fit_pipeline]child cpu time 2479.494225
+2019-02-17 09:01:07,837 - INFO - 561 : Start iteration: 1
+2019-02-17 09:01:07,911 - INFO - 818 : Querying Jasmine for next pipeline.
+2019-02-17 09:01:10,006 - INFO - 64 : memory usage 273736
+2019-02-17 09:01:10,066 - INFO - 64 : child memory usage 272192
+2019-02-17 09:01:10,281 - INFO - 73 : cpu time 477.439073
+2019-02-17 09:01:10,490 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:01:10,474 - INFO - 604 : Received pipeline: {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": 0.5, "min_samples_leaf": 0.001953125, "min_samples_split": 0.00310675990983383, "n_estimators": 600}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "267170f4a3646472cdc519cb6ed01dccd0f6790a"}
+2019-02-17 09:01:12,857 - INFO - 50 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1]CPU logical cores: 2, CPU cores: 2, virtual memory: 4107841536, swap memory: 0.
+2019-02-17 09:01:12,943 - INFO - 56 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1]Platform information: Linux-4.14.29-linuxkit-x86_64-with-debian-stretch-sid.
+2019-02-17 09:01:13,152 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Starting fit_pipeline]memory usage 273736
+2019-02-17 09:01:13,351 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Starting fit_pipeline]child memory usage 272192
+2019-02-17 09:01:13,619 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Starting fit_pipeline]cpu time 479.065556
+2019-02-17 09:01:13,828 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Starting fit_pipeline]child cpu time 2479.494225
+2019-02-17 09:01:14,068 - INFO - 325 : [ParentRunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1] X datatype is <class 'numpy.ndarray'>, shape is (20631, 24), datasize is 112.
+2019-02-17 09:01:14,275 - INFO - 330 : [ParentRunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1] y datatype is <class 'numpy.ndarray'>, shape is (20631,), datasize is 165144.
+2019-02-17 09:01:14,473 - INFO - 346 : Using child run AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1
+2019-02-17 09:01:14,689 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Before preprocess]memory usage 273736
+2019-02-17 09:01:14,933 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Before preprocess]child memory usage 272192
+2019-02-17 09:01:15,159 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Before preprocess]cpu time 479.490875
+2019-02-17 09:01:15,452 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Before preprocess]child cpu time 2479.494225
+2019-02-17 09:01:15,620 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][After preprocess]memory usage 273736
+2019-02-17 09:01:15,885 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][After preprocess]child memory usage 272192
+2019-02-17 09:01:16,113 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][After preprocess]cpu time 479.812305
+2019-02-17 09:01:16,290 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][After preprocess]child cpu time 2479.494225
+2019-02-17 09:01:16,536 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Before executing pipeline]memory usage 273736
+2019-02-17 09:01:16,713 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Before executing pipeline]child memory usage 272192
+2019-02-17 09:01:16,962 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Before executing pipeline]cpu time 479.973446
+2019-02-17 09:01:17,278 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][Before executing pipeline]child cpu time 2479.494225
+2019-02-17 09:01:17,575 - INFO - 417 : Start executing pipeline {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": 0.5, "min_samples_leaf": 0.001953125, "min_samples_split": 0.00310675990983383, "n_estimators": 600}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "267170f4a3646472cdc519cb6ed01dccd0f6790a"}.
+2019-02-17 09:01:17,766 - INFO - 419 : Running with the following AutoML settings:
+ - name: automl-predictive-rul
+ - subscription_id: 381b38e9-9840-4719-a5a0-61d9585e1e91
+ - iterations: 3
+ - primary_metric: r2_score
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 3
+ - y_min: 0
+ - y_max: 361
+ - num_classes: None
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 2
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 10
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: 0.985
+ - whitelist_models: None
+ - blacklist_algos: ['ExtremeRandomTrees', 'ExtraTreesRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 3
+ - enable_tf: True
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-02-17 09:01:20,816 - INFO - 64 : memory usage 273736
+2019-02-17 09:01:20,884 - INFO - 64 : child memory usage 272192
+2019-02-17 09:01:21,248 - INFO - 73 : cpu time 481.210292
+2019-02-17 09:01:21,516 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:01:31,823 - INFO - 64 : memory usage 273736
+2019-02-17 09:01:31,912 - INFO - 64 : child memory usage 272192
+2019-02-17 09:01:32,221 - INFO - 73 : cpu time 481.693003
+2019-02-17 09:01:32,429 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:01:42,731 - INFO - 64 : memory usage 273736
+2019-02-17 09:01:42,791 - INFO - 64 : child memory usage 272192
+2019-02-17 09:01:43,109 - INFO - 73 : cpu time 482.128287
+2019-02-17 09:01:43,439 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:01:53,673 - INFO - 64 : memory usage 273736
+2019-02-17 09:01:53,810 - INFO - 64 : child memory usage 272192
+2019-02-17 09:01:54,124 - INFO - 73 : cpu time 482.657721
+2019-02-17 09:01:54,528 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:02:04,936 - INFO - 64 : memory usage 273736
+2019-02-17 09:02:05,047 - INFO - 64 : child memory usage 272192
+2019-02-17 09:02:05,320 - INFO - 73 : cpu time 483.40918
+2019-02-17 09:02:05,563 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:02:15,942 - INFO - 64 : memory usage 273736
+2019-02-17 09:02:16,183 - INFO - 64 : child memory usage 272192
+2019-02-17 09:02:16,657 - INFO - 73 : cpu time 483.921512
+2019-02-17 09:02:17,083 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:02:27,548 - INFO - 64 : memory usage 275780
+2019-02-17 09:02:27,787 - INFO - 64 : child memory usage 272192
+2019-02-17 09:02:28,191 - INFO - 73 : cpu time 484.63848
+2019-02-17 09:02:28,788 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:02:39,453 - INFO - 64 : memory usage 275780
+2019-02-17 09:02:39,684 - INFO - 64 : child memory usage 272192
+2019-02-17 09:02:40,033 - INFO - 73 : cpu time 485.465858
+2019-02-17 09:02:40,567 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:02:50,952 - INFO - 64 : memory usage 275780
+2019-02-17 09:02:51,202 - INFO - 64 : child memory usage 272192
+2019-02-17 09:02:51,532 - INFO - 73 : cpu time 486.122275
+2019-02-17 09:02:52,123 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:03:02,769 - INFO - 64 : memory usage 275780
+2019-02-17 09:03:02,985 - INFO - 64 : child memory usage 272192
+2019-02-17 09:03:03,429 - INFO - 73 : cpu time 486.885757
+2019-02-17 09:03:03,971 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:03:14,283 - INFO - 64 : memory usage 275780
+2019-02-17 09:03:14,513 - INFO - 64 : child memory usage 272192
+2019-02-17 09:03:14,940 - INFO - 73 : cpu time 487.509723
+2019-02-17 09:03:15,368 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:03:25,774 - INFO - 64 : memory usage 275780
+2019-02-17 09:03:25,985 - INFO - 64 : child memory usage 272192
+2019-02-17 09:03:26,387 - INFO - 73 : cpu time 488.086829
+2019-02-17 09:03:26,815 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:03:37,264 - INFO - 64 : memory usage 275780
+2019-02-17 09:03:37,473 - INFO - 64 : child memory usage 272192
+2019-02-17 09:03:37,855 - INFO - 73 : cpu time 488.791547
+2019-02-17 09:03:38,568 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:03:48,691 - INFO - 64 : memory usage 275824
+2019-02-17 09:03:48,945 - INFO - 64 : child memory usage 272192
+2019-02-17 09:03:49,374 - INFO - 73 : cpu time 489.36933
+2019-02-17 09:03:49,750 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:04:00,293 - INFO - 64 : memory usage 275824
+2019-02-17 09:04:00,511 - INFO - 64 : child memory usage 272192
+2019-02-17 09:04:00,872 - INFO - 73 : cpu time 490.07889
+2019-02-17 09:04:01,152 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:04:11,558 - INFO - 64 : memory usage 275824
+2019-02-17 09:04:11,733 - INFO - 64 : child memory usage 272192
+2019-02-17 09:04:12,093 - INFO - 73 : cpu time 490.718141
+2019-02-17 09:04:12,425 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:04:22,763 - INFO - 64 : memory usage 275824
+2019-02-17 09:04:22,977 - INFO - 64 : child memory usage 272192
+2019-02-17 09:04:23,404 - INFO - 73 : cpu time 491.344466
+2019-02-17 09:04:23,855 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:04:34,359 - INFO - 64 : memory usage 275824
+2019-02-17 09:04:34,585 - INFO - 64 : child memory usage 272192
+2019-02-17 09:04:35,003 - INFO - 73 : cpu time 492.041442
+2019-02-17 09:04:35,352 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:04:45,816 - INFO - 64 : memory usage 275824
+2019-02-17 09:04:46,035 - INFO - 64 : child memory usage 272192
+2019-02-17 09:04:46,438 - INFO - 73 : cpu time 492.620667
+2019-02-17 09:04:46,848 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:04:57,547 - INFO - 64 : memory usage 275824
+2019-02-17 09:04:57,804 - INFO - 64 : child memory usage 272192
+2019-02-17 09:04:58,192 - INFO - 73 : cpu time 493.400426
+2019-02-17 09:04:58,719 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:05:09,201 - INFO - 64 : memory usage 275824
+2019-02-17 09:05:09,455 - INFO - 64 : child memory usage 272192
+2019-02-17 09:05:09,795 - INFO - 73 : cpu time 494.061815
+2019-02-17 09:05:10,323 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:05:20,922 - INFO - 64 : memory usage 275824
+2019-02-17 09:05:21,159 - INFO - 64 : child memory usage 272192
+2019-02-17 09:05:21,555 - INFO - 73 : cpu time 494.719618
+2019-02-17 09:05:22,081 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:05:32,529 - INFO - 64 : memory usage 275824
+2019-02-17 09:05:32,758 - INFO - 64 : child memory usage 272192
+2019-02-17 09:05:33,148 - INFO - 73 : cpu time 495.330254
+2019-02-17 09:05:33,541 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:05:44,090 - INFO - 64 : memory usage 275824
+2019-02-17 09:05:44,370 - INFO - 64 : child memory usage 272192
+2019-02-17 09:05:44,777 - INFO - 73 : cpu time 495.945389
+2019-02-17 09:05:45,135 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:05:55,677 - INFO - 64 : memory usage 275824
+2019-02-17 09:05:55,938 - INFO - 64 : child memory usage 272192
+2019-02-17 09:05:56,320 - INFO - 73 : cpu time 496.634372
+2019-02-17 09:05:56,700 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:06:07,090 - INFO - 64 : memory usage 275824
+2019-02-17 09:06:07,329 - INFO - 64 : child memory usage 272192
+2019-02-17 09:06:07,720 - INFO - 73 : cpu time 497.243606
+2019-02-17 09:06:08,084 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:06:18,527 - INFO - 64 : memory usage 275824
+2019-02-17 09:06:18,697 - INFO - 64 : child memory usage 272192
+2019-02-17 09:06:19,037 - INFO - 73 : cpu time 497.909743
+2019-02-17 09:06:19,427 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:06:29,817 - INFO - 64 : memory usage 275824
+2019-02-17 09:06:30,087 - INFO - 64 : child memory usage 272192
+2019-02-17 09:06:30,519 - INFO - 73 : cpu time 498.413786
+2019-02-17 09:06:31,066 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:06:41,488 - INFO - 64 : memory usage 275824
+2019-02-17 09:06:41,648 - INFO - 64 : child memory usage 272192
+2019-02-17 09:06:42,040 - INFO - 73 : cpu time 498.958629
+2019-02-17 09:06:42,431 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:06:52,923 - INFO - 64 : memory usage 275824
+2019-02-17 09:06:53,162 - INFO - 64 : child memory usage 272192
+2019-02-17 09:06:53,592 - INFO - 73 : cpu time 499.680043
+2019-02-17 09:06:54,135 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:07:04,716 - INFO - 64 : memory usage 275824
+2019-02-17 09:07:04,992 - INFO - 64 : child memory usage 272192
+2019-02-17 09:07:05,337 - INFO - 73 : cpu time 500.63148
+2019-02-17 09:07:05,949 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:07:16,060 - INFO - 64 : memory usage 275824
+2019-02-17 09:07:16,297 - INFO - 64 : child memory usage 272192
+2019-02-17 09:07:16,732 - INFO - 73 : cpu time 501.228909
+2019-02-17 09:07:17,300 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:07:27,743 - INFO - 64 : memory usage 275824
+2019-02-17 09:07:27,844 - INFO - 64 : child memory usage 272192
+2019-02-17 09:07:28,161 - INFO - 73 : cpu time 501.875859
+2019-02-17 09:07:28,450 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:07:38,869 - INFO - 64 : memory usage 275824
+2019-02-17 09:07:39,135 - INFO - 64 : child memory usage 272192
+2019-02-17 09:07:39,536 - INFO - 73 : cpu time 502.436261
+2019-02-17 09:07:39,996 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:07:50,556 - INFO - 64 : memory usage 275824
+2019-02-17 09:07:50,777 - INFO - 64 : child memory usage 272192
+2019-02-17 09:07:51,138 - INFO - 73 : cpu time 503.12179
+2019-02-17 09:07:51,729 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:08:01,868 - INFO - 64 : memory usage 275824
+2019-02-17 09:08:02,096 - INFO - 64 : child memory usage 272192
+2019-02-17 09:08:02,466 - INFO - 73 : cpu time 503.777252
+2019-02-17 09:08:02,817 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:08:13,153 - INFO - 64 : memory usage 275824
+2019-02-17 09:08:13,370 - INFO - 64 : child memory usage 272192
+2019-02-17 09:08:13,812 - INFO - 73 : cpu time 504.346127
+2019-02-17 09:08:14,271 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:08:24,887 - INFO - 64 : memory usage 275824
+2019-02-17 09:08:25,074 - INFO - 64 : child memory usage 272192
+2019-02-17 09:08:25,463 - INFO - 73 : cpu time 505.075766
+2019-02-17 09:08:25,808 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:08:36,207 - INFO - 64 : memory usage 275824
+2019-02-17 09:08:36,356 - INFO - 64 : child memory usage 272192
+2019-02-17 09:08:36,734 - INFO - 73 : cpu time 505.613596
+2019-02-17 09:08:37,327 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:08:47,643 - INFO - 64 : memory usage 275824
+2019-02-17 09:08:47,862 - INFO - 64 : child memory usage 272192
+2019-02-17 09:08:48,244 - INFO - 73 : cpu time 506.262
+2019-02-17 09:08:48,733 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:08:59,107 - INFO - 64 : memory usage 275824
+2019-02-17 09:08:59,277 - INFO - 64 : child memory usage 272192
+2019-02-17 09:08:59,683 - INFO - 73 : cpu time 506.86361
+2019-02-17 09:09:00,006 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:09:10,473 - INFO - 64 : memory usage 275832
+2019-02-17 09:09:10,685 - INFO - 64 : child memory usage 272192
+2019-02-17 09:09:11,039 - INFO - 73 : cpu time 507.474275
+2019-02-17 09:09:11,383 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:09:21,911 - INFO - 64 : memory usage 275832
+2019-02-17 09:09:22,119 - INFO - 64 : child memory usage 272192
+2019-02-17 09:09:22,458 - INFO - 73 : cpu time 508.051887
+2019-02-17 09:09:22,956 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:09:33,470 - INFO - 64 : memory usage 275832
+2019-02-17 09:09:33,684 - INFO - 64 : child memory usage 272192
+2019-02-17 09:09:34,045 - INFO - 73 : cpu time 508.801462
+2019-02-17 09:09:34,351 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:09:44,746 - INFO - 64 : memory usage 275832
+2019-02-17 09:09:44,983 - INFO - 64 : child memory usage 272192
+2019-02-17 09:09:45,286 - INFO - 73 : cpu time 509.361716
+2019-02-17 09:09:45,592 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:09:56,072 - INFO - 64 : memory usage 275832
+2019-02-17 09:09:56,241 - INFO - 64 : child memory usage 272192
+2019-02-17 09:09:56,698 - INFO - 73 : cpu time 510.023182
+2019-02-17 09:09:57,081 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:10:07,473 - INFO - 64 : memory usage 275832
+2019-02-17 09:10:07,702 - INFO - 64 : child memory usage 272192
+2019-02-17 09:10:07,978 - INFO - 73 : cpu time 510.605121
+2019-02-17 09:10:08,280 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:10:18,790 - INFO - 64 : memory usage 275832
+2019-02-17 09:10:18,983 - INFO - 64 : child memory usage 272192
+2019-02-17 09:10:19,309 - INFO - 73 : cpu time 511.253963
+2019-02-17 09:10:19,838 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:10:30,208 - INFO - 64 : memory usage 275832
+2019-02-17 09:10:30,411 - INFO - 64 : child memory usage 272192
+2019-02-17 09:10:30,768 - INFO - 73 : cpu time 511.824074
+2019-02-17 09:10:31,000 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:10:41,525 - INFO - 64 : memory usage 275832
+2019-02-17 09:10:41,711 - INFO - 64 : child memory usage 272192
+2019-02-17 09:10:42,075 - INFO - 73 : cpu time 512.563996
+2019-02-17 09:10:42,396 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:10:52,850 - INFO - 64 : memory usage 275832
+2019-02-17 09:10:53,017 - INFO - 64 : child memory usage 272192
+2019-02-17 09:10:53,316 - INFO - 73 : cpu time 513.168764
+2019-02-17 09:10:53,648 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:11:04,092 - INFO - 64 : memory usage 275832
+2019-02-17 09:11:04,324 - INFO - 64 : child memory usage 272192
+2019-02-17 09:11:04,736 - INFO - 73 : cpu time 513.589873
+2019-02-17 09:11:05,249 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:11:15,382 - INFO - 64 : memory usage 275832
+2019-02-17 09:11:15,571 - INFO - 64 : child memory usage 272192
+2019-02-17 09:11:15,942 - INFO - 73 : cpu time 514.11964
+2019-02-17 09:11:16,263 - INFO - 73 : child cpu time 2479.494225
+2019-02-17 09:11:22,449 - ERROR - 34 : 
+2019-02-17 09:11:22,492 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+2019-02-17 09:11:22,791 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][After executing pipeline]memory usage 275832
+2019-02-17 09:11:22,990 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][After executing pipeline]child memory usage 276156
+2019-02-17 09:11:23,200 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][After executing pipeline]cpu time 514.706378
+2019-02-17 09:11:23,499 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][After executing pipeline]child cpu time 3431.174318
+2019-02-17 09:11:23,823 - INFO - 446 : Pipeline execution finished with a score of nan
+2019-02-17 09:11:24,100 - INFO - 473 : Start logging metrics for child run.
+2019-02-17 09:11:24,379 - INFO - 637 : The following metrics have been logged for the child run: {}.
+2019-02-17 09:11:26,730 - INFO - 64 : memory usage 275832
+2019-02-17 09:11:26,830 - INFO - 64 : child memory usage 276156
+2019-02-17 09:11:27,094 - INFO - 73 : cpu time 516.008002
+2019-02-17 09:11:27,309 - INFO - 73 : child cpu time 3431.174318
+2019-02-17 09:11:30,197 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][End fit_pipeline]memory usage 275832
+2019-02-17 09:11:30,266 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][End fit_pipeline]child memory usage 276156
+2019-02-17 09:11:30,484 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][End fit_pipeline]cpu time 517.673852
+2019-02-17 09:11:30,694 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1][End fit_pipeline]child cpu time 3431.174318
+2019-02-17 09:11:30,906 - ERROR - 34 : Run 'AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1' failed. Check the log for more details.
+2019-02-17 09:11:31,135 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_azureautomlclient.py", line 638, in _fit_iteration
+    run_id)) from inner_type
+RuntimeError: Run 'AutoML_59a47873-dc59-4356-af5b-3520f6534a03_1' failed. Check the log for more details.
+
+2019-02-17 09:11:32,935 - INFO - 561 : Start iteration: 2
+2019-02-17 09:11:33,069 - INFO - 818 : Querying Jasmine for next pipeline.
+2019-02-17 09:11:36,023 - INFO - 604 : Received pipeline: {"pipeline_id":"__AutoML_Ensemble__","objects":[{"module":"azureml.train.automl.ensemble","class_name":"Ensemble","spec_class":"sklearn","param_args":[],"param_kwargs":{"automl_settings":"{'name': 'automl-predictive-rul', 'path': './sample_projects/automl-demo-predmain', 'subscription_id': '381b38e9-9840-4719-a5a0-61d9585e1e91', 'resource_group': 'automl_nasa_newrg', 'workspace_name': 'automatedml_nasa_aznb', 'iterations': 3, 'primary_metric': 'r2_score', 'data_script': None, 'compute_target': 'local', 'task_type': 'regression', 'validation_size': 0.0, 'n_cross_validations': 3, 'y_min': 0, 'y_max': 361, 'num_classes': None, 'preprocess': False, 'lag_length': 0, 'is_timeseries': False, 'max_cores_per_iteration': 2, 'max_concurrent_iterations': 1, 'iteration_timeout_minutes': 10, 'mem_in_mb': None, 'enforce_time_on_windows': False, 'experiment_timeout_minutes': None, 'experiment_exit_score': 0.985, 'whitelist_models': None, 'blacklist_algos': ['ExtremeRandomTrees', 'ExtraTreesRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM'], 'auto_blacklist': True, 'blacklist_samples_reached': True, 'exclude_nan_labels': True, 'verbosity': 20, 'debug_log': 'automl_errors.log', 'show_warnings': False, 'model_explainability': False, 'service_url': None, 'sdk_url': None, 'sdk_packages': None, 'telemetry_verbosity': 'INFO', 'send_telemetry': True, 'spark_service': None, 'metrics': None, 'enable_ensembling': True, 'ensemble_iterations': 3, 'enable_tf': True, 'enable_cache': True, 'enable_subsampling': False, 'subsample_seed': None, 'cost_mode': 0, 'metric_operation': 'maximize'}","ensemble_run_id":"AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2","experiment_name":"automl-predictive-rul","workspace_name":"automatedml_nasa_aznb","subscription_id":"381b38e9-9840-4719-a5a0-61d9585e1e91","resource_group_name":"automl_nasa_newrg"}}]}
+2019-02-17 09:11:37,556 - INFO - 64 : memory usage 275832
+2019-02-17 09:11:37,630 - INFO - 64 : child memory usage 276156
+2019-02-17 09:11:37,846 - INFO - 73 : cpu time 520.528722
+2019-02-17 09:11:38,047 - INFO - 73 : child cpu time 3431.174318
+2019-02-17 09:11:39,072 - INFO - 50 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2]CPU logical cores: 2, CPU cores: 2, virtual memory: 4107841536, swap memory: 0.
+2019-02-17 09:11:39,131 - INFO - 56 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2]Platform information: Linux-4.14.29-linuxkit-x86_64-with-debian-stretch-sid.
+2019-02-17 09:11:39,336 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Starting fit_pipeline]memory usage 275832
+2019-02-17 09:11:39,627 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Starting fit_pipeline]child memory usage 276156
+2019-02-17 09:11:39,795 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Starting fit_pipeline]cpu time 521.441019
+2019-02-17 09:11:40,120 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Starting fit_pipeline]child cpu time 3431.174318
+2019-02-17 09:11:40,369 - INFO - 325 : [ParentRunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2] X datatype is <class 'numpy.ndarray'>, shape is (20631, 24), datasize is 112.
+2019-02-17 09:11:40,543 - INFO - 330 : [ParentRunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2] y datatype is <class 'numpy.ndarray'>, shape is (20631,), datasize is 165144.
+2019-02-17 09:11:40,902 - INFO - 346 : Using child run AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2
+2019-02-17 09:11:41,090 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Before preprocess]memory usage 275832
+2019-02-17 09:11:41,311 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Before preprocess]child memory usage 276156
+2019-02-17 09:11:41,484 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Before preprocess]cpu time 522.003247
+2019-02-17 09:11:41,762 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Before preprocess]child cpu time 3431.174318
+2019-02-17 09:11:41,987 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][After preprocess]memory usage 275832
+2019-02-17 09:11:42,170 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][After preprocess]child memory usage 276156
+2019-02-17 09:11:42,442 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][After preprocess]cpu time 522.264215
+2019-02-17 09:11:42,780 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][After preprocess]child cpu time 3431.174318
+2019-02-17 09:11:42,970 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Before executing pipeline]memory usage 275832
+2019-02-17 09:11:43,177 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Before executing pipeline]child memory usage 276156
+2019-02-17 09:11:43,393 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Before executing pipeline]cpu time 522.496621
+2019-02-17 09:11:43,710 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][Before executing pipeline]child cpu time 3431.174318
+2019-02-17 09:11:43,973 - INFO - 417 : Start executing pipeline {"pipeline_id":"__AutoML_Ensemble__","objects":[{"module":"azureml.train.automl.ensemble","class_name":"Ensemble","spec_class":"sklearn","param_args":[],"param_kwargs":{"automl_settings":"{'name': 'automl-predictive-rul', 'path': './sample_projects/automl-demo-predmain', 'subscription_id': '381b38e9-9840-4719-a5a0-61d9585e1e91', 'resource_group': 'automl_nasa_newrg', 'workspace_name': 'automatedml_nasa_aznb', 'iterations': 3, 'primary_metric': 'r2_score', 'data_script': None, 'compute_target': 'local', 'task_type': 'regression', 'validation_size': 0.0, 'n_cross_validations': 3, 'y_min': 0, 'y_max': 361, 'num_classes': None, 'preprocess': False, 'lag_length': 0, 'is_timeseries': False, 'max_cores_per_iteration': 2, 'max_concurrent_iterations': 1, 'iteration_timeout_minutes': 10, 'mem_in_mb': None, 'enforce_time_on_windows': False, 'experiment_timeout_minutes': None, 'experiment_exit_score': 0.985, 'whitelist_models': None, 'blacklist_algos': ['ExtremeRandomTrees', 'ExtraTreesRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM'], 'auto_blacklist': True, 'blacklist_samples_reached': True, 'exclude_nan_labels': True, 'verbosity': 20, 'debug_log': 'automl_errors.log', 'show_warnings': False, 'model_explainability': False, 'service_url': None, 'sdk_url': None, 'sdk_packages': None, 'telemetry_verbosity': 'INFO', 'send_telemetry': True, 'spark_service': None, 'metrics': None, 'enable_ensembling': True, 'ensemble_iterations': 3, 'enable_tf': True, 'enable_cache': True, 'enable_subsampling': False, 'subsample_seed': None, 'cost_mode': 0, 'metric_operation': 'maximize'}","ensemble_run_id":"AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2","experiment_name":"automl-predictive-rul","workspace_name":"automatedml_nasa_aznb","subscription_id":"381b38e9-9840-4719-a5a0-61d9585e1e91","resource_group_name":"automl_nasa_newrg"}}]}.
+2019-02-17 09:11:44,204 - INFO - 419 : Running with the following AutoML settings:
+ - name: automl-predictive-rul
+ - subscription_id: 381b38e9-9840-4719-a5a0-61d9585e1e91
+ - iterations: 3
+ - primary_metric: r2_score
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 3
+ - y_min: 0
+ - y_max: 361
+ - num_classes: None
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 2
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 10
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: 0.985
+ - whitelist_models: None
+ - blacklist_algos: ['ExtremeRandomTrees', 'ExtraTreesRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 3
+ - enable_tf: True
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-02-17 09:11:48,362 - INFO - 64 : memory usage 275832
+2019-02-17 09:11:48,472 - INFO - 64 : child memory usage 276156
+2019-02-17 09:11:48,657 - INFO - 73 : cpu time 524.3565
+2019-02-17 09:11:48,862 - INFO - 73 : child cpu time 3431.174318
+2019-02-17 09:11:59,050 - INFO - 64 : memory usage 275872
+2019-02-17 09:11:59,144 - INFO - 64 : child memory usage 276156
+2019-02-17 09:11:59,330 - INFO - 73 : cpu time 529.091454
+2019-02-17 09:11:59,570 - INFO - 73 : child cpu time 3431.174318
+2019-02-17 09:12:05,441 - INFO - 168 : Fetching fitted models for best 1 previous iterations
+2019-02-17 09:12:09,903 - INFO - 64 : memory usage 275872
+2019-02-17 09:12:10,188 - INFO - 64 : child memory usage 276156
+2019-02-17 09:12:10,972 - INFO - 73 : cpu time 532.198808
+2019-02-17 09:12:12,086 - INFO - 73 : child cpu time 3431.174318
+2019-02-17 09:12:18,017 - INFO - 90 : Fetched 1 fitted pipelines in 26 seconds
+2019-02-17 09:12:22,726 - INFO - 64 : memory usage 286692
+2019-02-17 09:12:22,856 - INFO - 64 : child memory usage 276156
+2019-02-17 09:12:23,064 - INFO - 73 : cpu time 539.213453
+2019-02-17 09:12:22,818 - INFO - 102 : Single models scores: [0.62374253]
+2019-02-17 09:12:23,323 - INFO - 73 : child cpu time 3431.174318
+2019-02-17 09:12:23,550 - INFO - 134 : Starting ensemble hill climbing. Current ensemble: [0], current score: 0.6237425335865256
+2019-02-17 09:12:24,031 - INFO - 168 : Iteration 0, new best ensemble: [0, 0], new best score :0.6237425335865256
+2019-02-17 09:12:24,523 - INFO - 172 : Final ensemble: [0, 0, 0], score: 0.6237425335865256. Best individual model score: 0.6237425335865256
+2019-02-17 09:12:24,609 - INFO - 179 : Unique models IDs in the ensemble: [0]. Weights: [1.0]
+2019-02-17 09:12:24,931 - INFO - 105 : Selected the pipelines for the ensemble in 6 seconds
+2019-02-17 09:12:33,835 - INFO - 64 : memory usage 286692
+2019-02-17 09:12:33,870 - INFO - 64 : child memory usage 276156
+2019-02-17 09:12:34,049 - INFO - 73 : cpu time 541.64876
+2019-02-17 09:12:34,248 - INFO - 73 : child cpu time 3431.174318
+2019-02-17 09:12:37,615 - INFO - 261 : Ensembled iterations: [0]. Ensembled algos: ['GradientBoosting']
+2019-02-17 09:12:43,733 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][After executing pipeline]memory usage 286692
+2019-02-17 09:12:43,842 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][After executing pipeline]child memory usage 276156
+2019-02-17 09:12:44,043 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][After executing pipeline]cpu time 548.147569
+2019-02-17 09:12:44,216 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][After executing pipeline]child cpu time 3431.174318
+2019-02-17 09:12:44,439 - INFO - 446 : Pipeline execution finished with a score of 0.6237425335865256
+2019-02-17 09:12:44,495 - INFO - 64 : memory usage 286692
+2019-02-17 09:12:44,950 - INFO - 64 : child memory usage 276156
+2019-02-17 09:12:45,164 - INFO - 73 : cpu time 548.346251
+2019-02-17 09:12:45,422 - INFO - 73 : child cpu time 3431.174318
+2019-02-17 09:12:44,658 - INFO - 473 : Start logging metrics for child run.
+2019-02-17 09:12:49,647 - INFO - 637 : The following metrics have been logged for the child run: {'normalized_median_absolute_error': 0.05812769661596833, 'median_absolute_error': 20.98409847836457, 'explained_variance': 0.6255461774339134, 'spearman_correlation': 0.8205179254286357, 'residuals': <class 'dict'>, 'root_mean_squared_error': 42.246353221386066, 'predicted_true': <class 'dict'>, 'mean_absolute_error': 30.203430057136078, 'root_mean_squared_log_error': 0.4699000461784895, 'normalized_root_mean_squared_error': 0.11702590920051542, 'r2_score': 0.6237425335865256, 'normalized_mean_absolute_error': 0.08366601123860408, 'normalized_root_mean_squared_log_error': 0.07975703034397447}.
+2019-02-17 09:12:55,688 - INFO - 64 : memory usage 286692
+2019-02-17 09:12:55,835 - INFO - 64 : child memory usage 276156
+2019-02-17 09:12:56,101 - INFO - 73 : cpu time 554.43117
+2019-02-17 09:12:56,342 - INFO - 73 : child cpu time 3431.174318
+2019-02-17 09:12:57,802 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][End fit_pipeline]memory usage 286692
+2019-02-17 09:12:57,865 - INFO - 64 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][End fit_pipeline]child memory usage 276156
+2019-02-17 09:12:58,065 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][End fit_pipeline]cpu time 555.521867
+2019-02-17 09:12:58,293 - INFO - 73 : [RunId:AutoML_59a47873-dc59-4356-af5b-3520f6534a03_2][End fit_pipeline]child cpu time 3431.174318
+2019-02-17 09:13:04,634 - INFO - 511 : Loading from file cache
+2019-02-17 09:13:04,725 - INFO - 93 : ActivityStarted
+2019-02-17 09:13:04,881 - INFO - 113 : ActivityCompleted: HowEnded=Success, Duration=156.19 [ms]
+2019-02-17 09:13:05,230 - INFO - 511 : UnLoading from file cache
+2019-02-17 09:13:05,369 - INFO - 93 : ActivityStarted
+2019-02-17 09:13:05,623 - INFO - 113 : ActivityCompleted: HowEnded=Success, Duration=253.98 [ms]
+2019-02-17 09:13:05,804 - INFO - 592 : Run Complete.
+2019-02-18 03:31:10,123 - ERROR - 34 : 
+2019-02-18 03:31:18,353 - ERROR - 34 : Run 'AutoML_34c0a5a0-9cee-4c69-b03e-3a133615b5f3_1' failed. Check the log for more details.
+2019-02-18 03:31:18,479 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_azureautomlclient.py", line 638, in _fit_iteration
+    run_id)) from inner_type
+RuntimeError: Run 'AutoML_34c0a5a0-9cee-4c69-b03e-3a133615b5f3_1' failed. Check the log for more details.
+
+2019-02-19 01:24:37,979 - ERROR - 34 : [Errno 22] Invalid argument
+2019-02-19 01:24:38,046 - ERROR - 35 : NoneType: None
+
+2019-02-19 02:44:18,822 - ERROR - 34 : 
+2019-02-19 02:44:18,873 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+2019-02-19 02:44:23,970 - ERROR - 34 : Run 'AutoML_6e851112-8368-4f97-91b3-87d56a8cc4fb_0' failed. Check the log for more details.
+2019-02-19 02:44:24,027 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_azureautomlclient.py", line 638, in _fit_iteration
+    run_id)) from inner_type
+RuntimeError: Run 'AutoML_6e851112-8368-4f97-91b3-87d56a8cc4fb_0' failed. Check the log for more details.
+
+2019-02-19 02:48:32,975 - ERROR - 34 : 
+2019-02-19 02:48:33,049 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+2019-02-19 02:48:38,186 - ERROR - 34 : Run 'AutoML_6e851112-8368-4f97-91b3-87d56a8cc4fb_1' failed. Check the log for more details.
+2019-02-19 02:48:38,287 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_azureautomlclient.py", line 638, in _fit_iteration
+    run_id)) from inner_type
+RuntimeError: Run 'AutoML_6e851112-8368-4f97-91b3-87d56a8cc4fb_1' failed. Check the log for more details.
+
+2019-02-19 03:08:08,305 - ERROR - 34 : 
+2019-02-19 03:08:08,377 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+2019-02-19 03:08:16,029 - ERROR - 34 : Run 'AutoML_6e851112-8368-4f97-91b3-87d56a8cc4fb_5' failed. Check the log for more details.
+2019-02-19 03:08:16,110 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_azureautomlclient.py", line 638, in _fit_iteration
+    run_id)) from inner_type
+RuntimeError: Run 'AutoML_6e851112-8368-4f97-91b3-87d56a8cc4fb_5' failed. Check the log for more details.
+
+2019-02-19 03:14:49,084 - ERROR - 34 : 
+2019-02-19 03:14:49,141 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+2019-02-19 03:14:53,185 - ERROR - 34 : Run 'AutoML_6e851112-8368-4f97-91b3-87d56a8cc4fb_7' failed. Check the log for more details.
+2019-02-19 03:14:53,260 - ERROR - 35 : automl.client.core.common.limit_function_call_exceptions.TimeoutException: EXCEEDED_TIME
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/automl.py", line 424, in _fit_pipeline_internal
+    logger, remote, y_transformer)
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_pipeline_run_helper.py", line 169, in _run_pipeline
+    raise RuntimeError from status
+RuntimeError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/nbuser/anaconda3_501/lib/python3.6/site-packages/azureml/train/automl/_azureautomlclient.py", line 638, in _fit_iteration
+    run_id)) from inner_type
+RuntimeError: Run 'AutoML_6e851112-8368-4f97-91b3-87d56a8cc4fb_7' failed. Check the log for more details.
+
