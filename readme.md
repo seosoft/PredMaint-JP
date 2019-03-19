@@ -12,16 +12,18 @@
 1. [日本語版ワークショップの GitHub リポジトリ](https://github.com/seosoft/PredMaint-JP) にアクセスします。  
 2. [Clone or download] で Clone 用の URL を取得します。（クリップボードにコピーします）  
 3. [Azure Notebooks](https://notebooks.azure.com) に接続してサインインします。  
-4. [Upload　GitHub Repo] をクリックして、上の手順でコピーした GitHub の URL を [GitHub Repository] に貼り付けます。
+4. [Upload GitHub Repo] をクリックして、上の手順でコピーした GitHub の URL を [GitHub Repository] に貼り付けます。
 5. プロジェクト名とプロジェクトIDを入力します。クローン先のプロジェクトをパブリックにしたくない場合は、[public] チェックボックスをオフにします。  
 6. ノートブックファイル（Predictive maintenance NASA sample.ipynb）を開き、指示に従います。
 
 
 ### 英語版ワークショップの利用開始手順
-1. [Predictive maintenance NASA sample.ipynb](https://notebooks.azure.com/deepak-notebook/projects/predmaint/html/Predictive%20maintenance%20NASA%20sample.ipynb) にアクセスします。
-2. [クローン] をクリックします。
-3. プロジェクト名とプロジェクトIDを入力します。クローン先のプロジェクトをパブリックにしたくない場合は、[public] チェックボックスをオフにします。
-4. ノートブックファイル（Predictive maintenance NASA sample.ipynb）を開き、指示に従います。
+1. [Azure Notebooks](https://notebooks.azure.com) に接続してサインインします。  
+2. [Predictive maintenance NASA sample.ipynb](https://notebooks.azure.com/deepak-notebook/projects/predmaint/html/Predictive%20maintenance%20NASA%20sample.ipynb) にアクセスします。
+3. [Clone] をクリックします。
+4. プロジェクト名とプロジェクトIDを入力します。クローン先のプロジェクトをパブリックにしたくない場合は、[public] チェックボックスをオフにします。
+5. ノートブックファイル（Predictive maintenance NASA sample.ipynb）を開き、指示に従います。
+
 
 ### <b>参考文献</b> 
 * https://aka.ms/automatedmldocs 
