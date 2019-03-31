@@ -18,7 +18,7 @@
 ![Upload-GitHubRepo](docs-images/Upload-GitHubRepo.JPG)
 5. 手順3でコピーした GitHub の URL を [GitHub Repository] に貼り付けます。プロジェクト名とプロジェクトIDを入力します。クローン先のプロジェクトをパブリックにしたくない場合は、[public] チェックボックスをオフにします。
 ![Upload-GitHubRepo2](docs-images/Upload-GitHubRepo2.JPG)
-6. ノートブックファイル（AutomatedMLWorkshop.ipynb）を開き、指示に従います。
+6. ノートブックファイル（Predictive maintenance NASA sample.ipynb）を開き、指示に従います。
 
 
 ### 英語版ワークショップの利用開始手順
