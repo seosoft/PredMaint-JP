@@ -16,7 +16,7 @@
 ![AzureNotebook-SignIn](docs-images/AzureNotebook-SignIn.JPG) 
 4. [My Project]をクリックし、[Upload GitHub Repo] をクリックします。
 ![Upload-GitHubRepo](docs-images/Upload-GitHubRepo.JPG)
-5. 手順3でコピーした GitHub の URL を [GitHub Repository] に貼り付けます。プロジェクト名とプロジェクトIDを入力します。クローン先のプロジェクトをパブリックにしたくない場合は、[public] チェックボックスをオフにします。
+5. 手順2でコピーした GitHub の URL を [GitHub Repository] に貼り付けます。プロジェクト名とプロジェクトIDを入力します。クローン先のプロジェクトをパブリックにしたくない場合は、[public] チェックボックスをオフにします。
 ![Upload-GitHubRepo2](docs-images/Upload-GitHubRepo2.JPG)
 6. ノートブックファイル（Predictive maintenance NASA sample.ipynb）を開き、指示に従います。
 
